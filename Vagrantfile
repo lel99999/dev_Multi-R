@@ -20,7 +20,7 @@ Vagrant.configure("2") do |config|
     roletester.ssh.forward_agent = true
 
     roletester.vm.provision "ansible" do |ansible|
-      ansible.playbook = "deploy_BaseSystem.yml"
+      ansible.playbook = "deploy_BaseRSystem.yml"
       ansible.inventory_path = "vagrant_hosts"
 #     ansible.tags = ansible_tags
 #     ansible.verbose = ansible_verbosity
