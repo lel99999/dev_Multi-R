@@ -23,6 +23,16 @@ sudo yum-config-manager --enable "rhel-*-optional-rpms"
 ##### Specify R Version
 `$export R_VERSION=4.1.3` <br/>
 
+** Ansible Setting Environment Variable: <br/>
+```
+- name: Install R v4.x
+  yum:
+    name: https://cdn.rstudio.com/r/centos-7/pkgs/R-${R_VERSION}-1-1.x86_64.rpm
+    state: present
+  environment:
+    R_VERSION: 4.2.1
+```
+
 ##### Download and Install R - RHEL 7
 ```
 $curl -O https://cdn.rstudio.com/r/centos-7/pkgs/R-${R_VERSION}-1-1.x86_64.rpm
