@@ -27,7 +27,8 @@ sudo yum-config-manager --enable "rhel-*-optional-rpms"
 ```
 - name: Install R v4.x
   yum:
-    name: https://cdn.rstudio.com/r/centos-7/pkgs/R-${R_VERSION}-1-1.x86_64.rpm
+    name: https://cdn.rstudio.com/r/centos-7/pkgs/R-4.2.1-1-1.x86_64.rpm
+#   name: https://cdn.rstudio.com/r/centos-7/pkgs/R-${R_VERSION}-1-1.x86_64.rpm
     state: present
   environment:
     R_VERSION: 4.2.1
