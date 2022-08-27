@@ -39,3 +39,16 @@ sudo yum-config-manager --enable "rhel-*-optional-rpms"
 $curl -O https://cdn.rstudio.com/r/centos-7/pkgs/R-${R_VERSION}-1-1.x86_64.rpm
 $sudo yum install R-${R_VERSION}-1-1.x86_64.rpm
 ```
+
+
+##### R RPM is a meta package that installs the following components
+`$sudo dnf install R` <br/> 
+
+| Component	     | Description                                                  |
+|:---------------|:------------------------------------------------------------ | 
+| R-core	       | The minimal R components necessary for a functional runtime  |
+| R-core-devel	 | Core files for development of R packages (no Java)           |
+| R-java	       | R with Fedora-provided Java Runtime Environment.             | 
+| R-java-devel	 | Development package for use with Java enabled R components.  |
+| libRmath	     | Standalone math library from the R project                   |
+| libRmath-devel | Headers from the R standalone math library.                  |
