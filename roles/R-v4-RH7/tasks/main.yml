@@ -12,9 +12,12 @@
   shell: subscription-manager repos --enable "rhel-*-optional-rpms"
 
 - name: Install R v4.x
+  become: yes
+  become_method: sudo
   yum:
     name: https://cdn.rstudio.com/r/centos-7/pkgs/R-4.2.1-1-1.x86_64.rpm
 #   name: https://cdn.rstudio.com/r/centos-7/pkgs/R-${R_VERSION}-1-1.x86_64.rpm
     state: present
+    disable_gpg_check: yes
   environment:
     R_VERSION: 4.2.1
