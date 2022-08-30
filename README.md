@@ -52,3 +52,13 @@ $sudo yum install R-${R_VERSION}-1-1.x86_64.rpm
 | R-java-devel	 | Development package for use with Java enabled R components.  |
 | libRmath	     | Standalone math library from the R project                   |
 | libRmath-devel | Headers from the R standalone math library.                  |
+
+#### Switch R Versions for RStudio Desktop
+```
+$export RSTUDIO_WHICH_R=/usr/bin/R4.2.1
+$ssh -Y <system> rstudio
+
+## Exit
+$export RSTUDIO_WHICH_R=/usr/bin/R3.6.0
+$ssh -Y <system> rstudio
+```
