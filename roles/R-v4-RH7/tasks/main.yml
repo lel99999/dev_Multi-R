@@ -21,3 +21,8 @@
     disable_gpg_check: yes
   environment:
     R_VERSION: 4.2.1
+- name: Create symlink
+  file:
+    src: /opt/R/4.2.1/bin/R
+    dest: /usr/bin/Rv4
+    state: link
