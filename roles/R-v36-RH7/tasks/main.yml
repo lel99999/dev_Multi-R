@@ -1,0 +1,29 @@
+---
+- name: Ensure umask is correct
+  lineinfile:
+    dest: "~/.bashrc"
+    line: umask 0022
+    regexp: (.*)umask(.*)
+    state: present
+
+- name: Ensure RHEL 7 Optional repository is enabled
+  become: yes
+  become_method: sudo
+  shell: subscription-manager repos --enable "rhel-*-optional-rpms"
+
+- name: Install R v4.x
+  become: yes
+  become_method: sudo
+  yum:
+    name: https://download-ib01.fedoraproject.org/pub/epel/7/x86_64/Packages/r/R-3.6.0-1.el7.x86_64.rpm
+#   name: https://cdn.rstudio.com/r/centos-7/pkgs/R-4.2.1-1-1.x86_64.rpm
+#   name: https://cdn.rstudio.com/r/centos-7/pkgs/R-${R_VERSION}-1-1.x86_64.rpm
+    state: present
+    disable_gpg_check: yes
+  environment:
+    R_VERSION: 4.2.1
+- name: Create symlink
+  file:
+    src: /opt/R/3.6.0/bin/R
+    dest: /usr/bin/Rv36
+    state: link
