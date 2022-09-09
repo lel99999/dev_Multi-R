@@ -32,7 +32,11 @@ sudo yum-config-manager --enable "rhel-*-optional-rpms"
     state: present
   environment:
     R_VERSION: 4.2.1
+   
 ```
+
+#### Scripting and Command-line frontend for R (littler)
+- [http://dirk.eddelbuettel.com/code/littler.html](http://dirk.eddelbuettel.com/code/littler.html) <br/>
 
 ##### Download and Install R - RHEL 7
 ```
