@@ -1,6 +1,8 @@
 # dev_Multi-R
 Deployment and Management of Multiple Versions of R Workspace and Notes
 
+#### Updated to RStudio Desktop & Server v2022.07.1-554
+
 ##### Links
 - [https://support.rstudio.com/hc/en-us/articles/215488098-Installing-multiple-versions-of-R-on-Linux](https://support.rstudio.com/hc/en-us/articles/215488098-Installing-multiple-versions-of-R-on-Linux) <br/>
 
