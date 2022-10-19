@@ -68,3 +68,14 @@ $ssh -Y <system> rstudio
 $export RSTUDIO_WHICH_R=/usr/bin/R3.6.0
 $ssh -Y <system> rstudio
 ```
+
+#### Install Packages from Previous versions (v3 -> v4)
+- Get packages from v3:
+  ```
+  $R -e 'ip = installed.packages();inst_pkgs = as.vector(ip[is.na(ip[,"Priority"]),1]);print(inst_pkgs);save(inst_pkgs,file="~/inst_pkgs.v3")'
+  ```
+  
+- Install in v4:
+  ```
+  $Rv4 -e ‘load("~/inst_pkgs.v3");for(count in 1:length(inst_pkgs)){  install.packages(inst_pkgs[count])}’
+  ```
