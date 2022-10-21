@@ -78,4 +78,16 @@ $ssh -Y <system> rstudio
 - Install in v4:
   ```
   $Rv4 -e ‘load("~/inst_pkgs.v3");for(count in 1:length(inst_pkgs)){  install.packages(inst_pkgs[count])}’
+  
+  ## Check if already installed, before installing
+  $Rv4 -e 'load("~/inst_pkgs.v3");for(count in 1:length(inst_pkgs){if (! (inst_pkgs[count] %in% installed.packages()[,'Package'])) { install.packages(pkgs=inst_pkgs[count] , repos=c('http://cran.rstudio.com/')); print('Added'); } else { print('Already installed'); }'
+
+  
+  ```
+
+#### Verify Packages Built for v4
+- In R:
+  ```
+  >ipkgs <- as.data.frame(installed.packages(), stringsAsFactors = FALSE, row.names = FALSE)
+  >ipkgs[, c("Package", "Version", "Built")]
   ```
