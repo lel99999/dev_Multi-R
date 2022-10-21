@@ -91,3 +91,4 @@ $ssh -Y <system> rstudio
   >ipkgs <- as.data.frame(installed.packages(), stringsAsFactors = FALSE, row.names = FALSE)
   >ipkgs[, c("Package", "Version", "Built")]
   ```
+  ![https://github.com/lel99999/dev_Multi-R/blob/main/R_installed_version_with_built-01.png](https://github.com/lel99999/dev_Multi-R/blob/main/R_installed_version_with_built-01.png) <br/>
